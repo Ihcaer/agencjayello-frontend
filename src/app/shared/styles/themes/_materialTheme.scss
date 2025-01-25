@@ -1,0 +1,12 @@
+@use "@angular/material" as mat;
+
+html {
+  @include mat.theme(
+    (
+      typography: Roboto,
+      density: 0,
+    )
+  );
+  --mat-sys-primary: #f5df4d;
+  --mat-sys-on-primary: #000;
+}
