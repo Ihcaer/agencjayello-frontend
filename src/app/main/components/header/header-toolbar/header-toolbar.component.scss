@@ -1,0 +1,55 @@
+@use "./toolbar-variables" as variables;
+
+$background-color: #ffffff4d;
+
+.header-toolbar {
+  background-color: $background-color;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: gap variables.$animations-duration ease-in-out;
+
+  &:has(.menu.open) {
+    gap: 15px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 10px;
+
+    .app-contact-button {
+      width: 70%;
+    }
+    menu-button {
+      width: 30%;
+    }
+  }
+  .menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height variables.$animations-duration ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      opacity: 0;
+      transition: opacity variables.$animations-duration ease-in-out;
+    }
+    &.open {
+      max-height: 60svh;
+      span {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint) {
+  .header-toolbar {
+    padding: 10px;
+  }
+}

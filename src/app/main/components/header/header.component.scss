@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 20px 0;
+}
+app-header-toolbar {
+  height: 100%;
+}
+
+@media (max-width: 25rem) {
+  header {
+    padding: 10px 10px 0;
+  }
+}

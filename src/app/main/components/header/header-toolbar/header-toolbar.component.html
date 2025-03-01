@@ -1,0 +1,15 @@
+<div class="header-toolbar">
+  <div class="buttons">
+    <app-contact-button />
+    <nav class="menu-button">
+      <app-menu-button (buttonClicked)="toggleMenu($event)" />
+    </nav>
+  </div>
+  <nav class="menu" [class.open]="isMenuOpen()">
+    @for (reference of references(); track $index){
+    <a [routerLink]="reference.path">{{ reference.name }}</a>
+    }
+    <!-- <span>lorem ipsum</span> -->
+    <!-- <app-header-navigation /> -->
+  </nav>
+</div>

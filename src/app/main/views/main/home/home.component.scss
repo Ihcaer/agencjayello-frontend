@@ -1,0 +1,40 @@
+@use "animations";
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .scrollingImages {
+    position: absolute;
+
+    transform: translateX(-50%);
+    z-index: 1;
+    pointer-events: none;
+    transition: transform 0.2s ease-out;
+    width: 100%;
+
+    .david-image {
+      position: absolute;
+      top: 20svh;
+      left: 75%;
+      animation: float 5s ease infinite;
+
+      img {
+        width: 100%;
+        max-width: 12.5rem;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 26.5rem) {
+  .david-image {
+    left: 60% !important;
+    top: 50svh !important;
+  }
+  .david-image > img {
+    max-width: calc(15svh + 1rem) !important;
+  }
+}

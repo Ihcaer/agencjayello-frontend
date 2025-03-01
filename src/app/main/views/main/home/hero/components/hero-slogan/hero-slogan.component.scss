@@ -1,0 +1,21 @@
+@use "animations";
+@mixin text-no-wrap {
+  white-space: nowrap;
+  @supports (text-wrap: nowrap) {
+    text-wrap: nowrap;
+  }
+}
+
+h1 {
+  font-size: clamp(2rem, calc(3.5vw + 1rem), 5rem);
+  text-shadow: 5px 4px 10px #00000033;
+  z-index: 2;
+  @include text-no-wrap;
+
+  .blinking {
+    animation: blinking 3s ease infinite;
+  }
+  .slogan__second-line {
+    color: #969696;
+  }
+}

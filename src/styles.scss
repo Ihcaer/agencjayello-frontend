@@ -1,12 +1,26 @@
-@import "materialTheme";
+@use "materialTheme";
+@use "text-styles";
 @import "bootstrapTheme";
 @import "bootstrap/scss/bootstrap";
 
-html,
-body {
-  height: 100%;
+:root {
+  --main-yellow: var(--mat-sys-primary);
 }
+
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }

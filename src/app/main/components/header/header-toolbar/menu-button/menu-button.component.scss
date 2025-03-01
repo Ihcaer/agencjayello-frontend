@@ -1,0 +1,38 @@
+@use "../toolbar-variables" as variables;
+
+$background-color: #fff;
+$bar-width: 30px;
+$bar-height: 4px;
+$bars-gap: 5px;
+$animation-translate-value: 9px;
+$animation-rotate-angle: 45deg;
+
+button {
+  background-color: $background-color;
+  box-shadow: variables.$buttons-shadow;
+  transition: transform variables.$buttons-click-duration;
+
+  &:active {
+    transform: variables.$buttons-click-effect;
+  }
+  div {
+    background-color: variables.$font-color;
+    width: $bar-width;
+    height: $bar-height;
+    margin: $bars-gap 0;
+    transition: all variables.$animations-duration ease;
+  }
+  &.open {
+    div:nth-child(1) {
+      transform: translateY($animation-translate-value)
+        rotate($animation-rotate-angle);
+    }
+    div:nth-child(2) {
+      opacity: 0;
+    }
+    div:nth-child(3) {
+      transform: translateY(-$animation-translate-value)
+        rotate(-$animation-rotate-angle);
+    }
+  }
+}

@@ -37,7 +37,11 @@
               "entry": "src/server.ts"
             },
             "stylePreprocessorOptions": {
-              "includePaths": ["src/app/shared/styles/themes"]
+              "includePaths": [
+                "src/app/shared/styles/themes",
+                "src/app/shared/styles/animations",
+                "src/app/shared/styles/common"
+              ]
             }
           },
           "configurations": {
@@ -102,7 +106,14 @@
               }
             ],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/shared/styles/themes",
+                "src/app/shared/styles/animations",
+                "src/app/shared/styles/common"
+              ]
+            }
           }
         }
       }

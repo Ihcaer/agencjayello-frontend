@@ -1,0 +1,20 @@
+@use "../toolbar-variables" as variables;
+
+$background-color: var(--main-yellow);
+$padding: 0 26px;
+
+button {
+  color: variables.$font-color;
+  background-color: $background-color;
+  height: 100%;
+  padding: $padding;
+  border: 0;
+  border-radius: 15px;
+  font-size: 1.75rem;
+  box-shadow: variables.$buttons-shadow;
+  transition: transform variables.$buttons-click-duration;
+
+  &:active {
+    transform: variables.$buttons-click-effect;
+  }
+}
