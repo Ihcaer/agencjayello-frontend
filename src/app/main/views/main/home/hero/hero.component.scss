@@ -1,19 +1,15 @@
 $backgroundImageUrl: url("../../../../../../../public/hero/tlo.avif");
 
 .hero-container {
-  width: 100%;
-  height: 100vh;
-  position: relative;
+  height: 100svh;
   background-image: $backgroundImageUrl;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   app-hero-slogan {
-    position: absolute;
     left: 5%;
     top: 60%;
-    z-index: 2;
   }
 }
 

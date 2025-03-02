@@ -1,9 +1,5 @@
 $mainYellow: var(--main-yellow);
 
-.yellow-text {
-  color: $mainYellow;
-}
-
 .yellow-underline {
   transition: box-shadow 250ms ease-in-out;
   text-decoration: underline $mainYellow;

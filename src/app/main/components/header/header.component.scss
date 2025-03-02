@@ -1,15 +1,8 @@
-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 20px 0;
-}
-app-header-toolbar {
-  height: 100%;
-}
+$side-padding-25-breakpoint: 0.5rem !important;
 
 @media (max-width: 25rem) {
   header {
-    padding: 10px 10px 0;
+    padding-left: $side-padding-25-breakpoint;
+    padding-right: $side-padding-25-breakpoint;
   }
 }

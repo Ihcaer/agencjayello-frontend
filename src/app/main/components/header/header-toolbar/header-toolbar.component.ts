@@ -15,7 +15,7 @@ export class HeaderToolbarComponent {
   isMenuOpen = signal(false);
   references = signal(referencesConfig);
 
-  toggleMenu(isOpen: boolean) {
+  toggleMenu(isOpen: boolean): void {
     this.isMenuOpen.set(isOpen);
   }
 }

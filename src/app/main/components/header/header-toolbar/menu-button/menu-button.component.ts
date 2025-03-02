@@ -12,7 +12,7 @@ export class MenuButtonComponent {
   buttonClicked = output<boolean>();
   menuOpen = signal(false);
 
-  toggleMenu() {
+  toggleMenu(): void {
     this.menuOpen.update(value => !value);
     this.buttonClicked.emit(this.menuOpen());
   }

@@ -1,15 +1,15 @@
-<div class="header-toolbar">
-  <div class="buttons">
-    <app-contact-button />
+<div class="header-toolbar rounded-4 p-3">
+  <div class="d-flex flex-row justify-content-end flex-nowrap gap-3">
+    <app-contact-button class="w-70" />
     <nav class="menu-button">
-      <app-menu-button (buttonClicked)="toggleMenu($event)" />
+      <app-menu-button (buttonClicked)="toggleMenu($event)" class="w-30" />
     </nav>
   </div>
   <nav class="menu" [class.open]="isMenuOpen()">
     @for (reference of references(); track $index){
-    <a [routerLink]="reference.path">{{ reference.name }}</a>
+    <a [routerLink]="reference.path">
+      {{ reference.name }}
+    </a>
     }
-    <!-- <span>lorem ipsum</span> -->
-    <!-- <app-header-navigation /> -->
   </nav>
 </div>
