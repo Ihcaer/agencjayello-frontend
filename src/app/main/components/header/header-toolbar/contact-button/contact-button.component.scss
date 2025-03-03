@@ -1,11 +1,41 @@
 @use "../toolbar-variables" as variables;
 
+$basic-side-padding: 1.5rem;
+$icon-text-gap: 0.5rem;
+$transition-values: transform variables.$buttons-click-duration,
+  color variables.$animations-duration,
+  background-color variables.$animations-duration;
+
 button {
   color: variables.$font-color;
   box-shadow: variables.$buttons-shadow;
-  transition: transform variables.$buttons-click-duration;
+  transition: $transition-values;
+  padding: 0 $basic-side-padding;
 
   &:active {
     transform: variables.$buttons-click-effect;
+  }
+  &.open {
+    color: var(--main-yellow);
+    background-color: variables.$font-color !important;
+    padding-left: calc($basic-side-padding - 0.5rem) !important;
+
+    .contact-text {
+      padding-left: $icon-text-gap;
+    }
+    /* .closeIcon {
+      opacity: 1;
+      transform: scale(1);
+    } */
+  }
+  .closeIcon {
+    color: var(--main-yellow);
+    /* opacity: 0;
+    transform: scale(1);
+    transition: opacity variables.$animations-duration,
+      transform variables.$animations-duration; */
+  }
+  .contact-text {
+    transition: padding variables.$animations-duration;
   }
 }
