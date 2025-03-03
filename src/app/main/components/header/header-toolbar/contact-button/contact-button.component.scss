@@ -23,19 +23,28 @@ button {
     .contact-text {
       padding-left: $icon-text-gap;
     }
-    /* .closeIcon {
-      opacity: 1;
+    .closeIcon {
       transform: scale(1);
-    } */
+      width: 2rem;
+    }
   }
   .closeIcon {
     color: var(--main-yellow);
-    /* opacity: 0;
-    transform: scale(1);
-    transition: opacity variables.$animations-duration,
-      transform variables.$animations-duration; */
+    transform: scale(0);
+    transition: transform variables.$animations-duration;
+    width: 0;
+    overflow: hidden;
   }
   .contact-text {
     transition: padding variables.$animations-duration;
+  }
+}
+
+@media (max-width: variables.$mobile-breakpoint) {
+  button {
+    padding: 0 1rem !important;
+  }
+  .contact-text {
+    padding-left: 0 !important;
   }
 }

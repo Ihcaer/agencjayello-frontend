@@ -5,9 +5,7 @@
   [class.open]="isContactOverlayOpen()"
   (click)="toggleContactOverlay()"
 >
-  @if(isContactOverlayOpen()){
   <span class="material-symbols-outlined fs-2 closeIcon">close</span>
-  }
   <span class="contact-text">Kontakt</span>
 </button>
 <app-contact-overlay />

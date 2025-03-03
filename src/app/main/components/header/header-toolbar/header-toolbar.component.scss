@@ -28,8 +28,11 @@ $space-between-buttons-and-menu: 15px;
   }
 }
 
-@media (max-width: variables.$breakpoint) {
+@media (max-width: variables.$mobile-breakpoint) {
   .header-toolbar {
     padding: 10px !important;
+  }
+  .buttons {
+    gap: 0.7rem !important;
   }
 }
