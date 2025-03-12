@@ -1,0 +1,35 @@
+@use "../contact-overlay-variables" as variables;
+
+$reference-hover-color: #fff;
+$mobile-breakpoint: 24rem;
+$mobile-breakpoint-header-fs: 1.2rem !important;
+$mobile-breakpoint-paragraph-fs: 0.8rem !important;
+
+.info {
+  color: variables.$gray;
+
+  h3 {
+    font-size: clamp(1.5rem, calc(10vw + 1rem), 3rem);
+  }
+  a {
+    transition: color 200ms;
+
+    &:hover {
+      color: $reference-hover-color;
+    }
+    .contact-elements {
+      font-size: clamp(1rem, calc(0.5vw + 1rem), 1.25rem);
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  h3,
+  .offices__office > h4 {
+    font-size: $mobile-breakpoint-header-fs;
+  }
+  .contact-elements,
+  .offices__office p {
+    font-size: $mobile-breakpoint-paragraph-fs;
+  }
+}

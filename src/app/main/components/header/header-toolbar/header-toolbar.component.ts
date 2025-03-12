@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MenuButtonComponent } from "./menu-button/menu-button.component";
 import { ContactButtonComponent } from "./contact-button/contact-button.component";
-import { referencesConfig } from '@main/config/references.config';
+import { referencesConfig } from '@main/config/references/references.config';
 import { RouterLink } from '@angular/router';
 
 @Component({

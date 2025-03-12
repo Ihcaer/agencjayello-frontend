@@ -1,4 +1,12 @@
 <ng-template #contactForm>
-  <div><h2 id="overlayLabel">lorem ipsum</h2></div>
-  <div>lorem ipsum</div>
+  <div>
+    <h2 id="overlayLabel" class="contact-header">Zapraszamy do kontaktu</h2>
+  </div>
+  <div class="contact-body d-flex gap-4 justify-content-center w-100 mx-4">
+    <app-contact-data class="contact-body__components" />
+    <span class="contact-body__connector align-self-center text-nowrap fs-2">
+      — lub —
+    </span>
+    <app-contact-form class="contact-body__components" />
+  </div>
 </ng-template>

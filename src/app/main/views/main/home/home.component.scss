@@ -1,17 +1,11 @@
 @use "animations";
 
 main {
-  /* display: flex;
-  flex-direction: column;
-  position: relative;
- */
   .scrollingImages {
     position: absolute;
     transform: translateX(-50%);
-    // z-index: 1;
     pointer-events: none;
     transition: transform 0.2s ease-out;
-    // width: 100%;
 
     .david-image {
       position: absolute;
