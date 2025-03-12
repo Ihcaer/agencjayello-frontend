@@ -20,17 +20,28 @@ import { AboutUsSectionComponent } from "./about-us-section/about-us-section.com
 export class HomeComponent {
   scrollPosition: number = 0;
   maxScrollPosition: number = 900;
+  private ticking = false;
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    const newPosition = window.scrollY;
-    this.scrollPosition = Math.min(newPosition, this.maxScrollPosition);
+    /* const newPosition = window.scrollY;
+    this.scrollPosition = Math.min(newPosition, this.maxScrollPosition); */
+
+    if (!this.ticking) {
+      window.requestAnimationFrame(() => {
+        const newPosition = window.scrollY;
+        this.scrollPosition = Math.min(newPosition, this.maxScrollPosition);
+        this.ticking = false;
+      });
+      this.ticking = true;
+    }
   }
 
   getScrollingImageStyles() {
-    // Deactivation when screen is too small in @Component decorator
-    return {
-      'transform': 'translateY(' + this.scrollPosition + 'px) rotate(10deg)',
+    const styles = {
+      // Deactivation when screen is too small in @Component decorator
+      'transform': 'translateY(' + this.scrollPosition + 'px) rotate(10deg)'
     }
+    return styles;
   }
 }
