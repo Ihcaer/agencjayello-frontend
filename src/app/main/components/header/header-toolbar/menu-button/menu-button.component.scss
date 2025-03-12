@@ -9,7 +9,7 @@ $animation-rotate-angle: 45deg;
 
 button {
   background-color: $background-color;
-  box-shadow: variables.$buttons-shadow;
+  box-shadow: variables.$buttons-shadow !important;
   transition: transform variables.$buttons-click-duration;
 
   &:active {
