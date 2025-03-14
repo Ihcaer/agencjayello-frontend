@@ -1,0 +1,10 @@
+@use "../footer-commons";
+
+h4 {
+  font-size: inherit;
+}
+
+.address {
+  font-size: clamp(0.75rem, calc(0.5vw + 0.5rem), 1rem);
+  margin: 3px 0 10px;
+}
