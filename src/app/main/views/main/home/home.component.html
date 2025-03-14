@@ -3,8 +3,15 @@
   <section><app-about-us-section /></section>
 
   <div class="scrollingImages z-1 w-100" [ngStyle]="getScrollingImageStyles()">
-    <div class="david-image">
-      <img src="common/1/1.avif" alt="Rzeźba Dawida" />
-    </div>
+    <picture class="david-image">
+      <source srcset="common/1/1.avif" type="image/avif" />
+      <img
+        ngSrc="common/1/1.png"
+        alt="Rzeźba Dawida"
+        width="602"
+        height="1602"
+        priority
+      />
+    </picture>
   </div>
 </main>

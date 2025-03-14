@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { HeroComponent } from './hero/hero.component';
 import { AboutUsSectionComponent } from "./about-us-section/about-us-section.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, HeroComponent, AboutUsSectionComponent],
+  imports: [CommonModule, NgOptimizedImage, HeroComponent, AboutUsSectionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   styles: [`
@@ -24,9 +24,6 @@ export class HomeComponent {
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    /* const newPosition = window.scrollY;
-    this.scrollPosition = Math.min(newPosition, this.maxScrollPosition); */
-
     if (!this.ticking) {
       window.requestAnimationFrame(() => {
         const newPosition = window.scrollY;
