@@ -1,0 +1,25 @@
+$mainYellow: var(--main-yellow);
+$primaryColor: #fff;
+$headerColor: #ebebeb;
+$listFontColor: #e5e5e5;
+$headerFontSize: clamp(1.5rem, calc(0.5vw + 1rem), 2rem);
+$listOptionsFontSize: clamp(1rem, calc(0.5vw + 0.75rem), 1.25rem);
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a,
+.reference {
+  text-decoration: underline $mainYellow;
+}
+
+.footer-headline {
+  color: $headerColor;
+  font-size: $headerFontSize;
+}
+.footer-options {
+  color: $listFontColor;
+  font-size: $listOptionsFontSize;
+}
