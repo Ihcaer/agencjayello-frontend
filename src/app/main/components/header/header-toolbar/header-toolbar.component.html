@@ -2,14 +2,43 @@
   <div class="buttons d-flex flex-row justify-content-end flex-nowrap gap-3">
     <app-contact-button class="w-70" />
     <nav class="menu-button">
-      <app-menu-button (buttonClicked)="toggleMenu($event)" class="w-30" />
+      <app-menu-button
+        (buttonClicked)="toggleMenu($event)"
+        class="w-30"
+        aria-controls="navigation-menu"
+        aria-label="Otwórz menu nawigacyjne"
+        [ariaExpanded]="isMenuOpen()"
+      />
     </nav>
   </div>
-  <nav class="menu" [class.open]="isMenuOpen()">
-    @for (reference of references(); track $index){
-    <a [routerLink]="reference.path">
-      {{ reference.name }}
-    </a>
-    }
-  </nav>
+  <div class="menu fw-light" [class.open]="isMenuOpen()">
+    <nav id="navigation-menu" aria-label="Menu nawigacyjne">
+      <ul>
+        @for (reference of references(); track $index){
+        <li>
+          <a [routerLink]="reference.path">
+            {{ reference.name }}
+          </a>
+        </li>
+        }
+      </ul>
+    </nav>
+    <mat-divider />
+    <div class="socials f-flex justify-content-evenly">
+      @for(social of socialMedia(); track social){
+      <a
+        [href]="social.link"
+        target="_blank"
+        class="d-flex justify-content-center align-items-center"
+      >
+        <img
+          [ngSrc]="social.iconPath + social.darkIcon"
+          [alt]="social.name"
+          width="20"
+          height="20"
+        />
+      </a>
+      }
+    </div>
+  </div>
 </div>

@@ -24,4 +24,9 @@ html {
       error-text-color: $error-color,
     )
   );
+  @include mat.divider-overrides(
+    (
+      color: #000,
+    )
+  );
 }
