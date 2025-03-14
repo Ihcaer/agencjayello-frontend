@@ -1,4 +1,4 @@
-interface ContactData {
+export interface ContactData {
    phoneNumber: string;
    email: string;
    nip: string;

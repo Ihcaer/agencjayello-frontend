@@ -1,5 +1,8 @@
 @use "@angular/material" as mat;
 
+$error-color: #ff3131;
+$error-hover-color: #fc6262;
+
 html {
   @include mat.theme(
     (
@@ -9,4 +12,21 @@ html {
   );
   --mat-sys-primary: #f5df4d;
   --mat-sys-on-primary: #000;
+
+  @include mat.form-field-overrides(
+    (
+      filled-error-hover-label-text-color: $error-hover-color,
+      filled-error-focus-label-text-color: $error-color,
+      filled-error-label-text-color: $error-color,
+      filled-error-active-indicator-color: $error-color,
+      filled-error-focus-active-indicator-color: $error-color,
+      filled-error-hover-active-indicator-color: $error-hover-color,
+      error-text-color: $error-color,
+    )
+  );
+  @include mat.divider-overrides(
+    (
+      color: #000,
+    )
+  );
 }

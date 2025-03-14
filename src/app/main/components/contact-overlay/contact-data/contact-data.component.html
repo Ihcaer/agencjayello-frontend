@@ -1,0 +1,29 @@
+<div class="d-flex flex-column gap-3">
+  <!--  data -->
+  <div class="info bg-primary py-3 px-4 rounded-4 d-flex flex-column gap-2">
+    <h3 class="text-nowrap fs-2">Umów spotkanie w placówce</h3>
+    <div class="d-flex flex-column gap-1">
+      @for(data of formattedContactData; track $index){
+      <a [href]="data.ref" class="d-flex align-items-center gap-2">
+        <i
+          [class]="data.icon"
+          class="contact-elements d-flex justify-content-center align-items-center"
+        ></i>
+        <p class="contact-elements">{{ data.value }}</p>
+      </a>
+      }
+    </div>
+  </div>
+  <!-- Offices -->
+  <div class="offices px-4 d-flex flex-wrap gap-2 justify-content-between">
+    @for(office of officeLocations; track $index){
+    <div class="offices__office d-flex flex-column gap-1">
+      <h4>{{ office.city }}</h4>
+      <div class="d-flex flex-column">
+        <p>{{ office.address }}</p>
+        <p>{{ office.zipCode }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</div>

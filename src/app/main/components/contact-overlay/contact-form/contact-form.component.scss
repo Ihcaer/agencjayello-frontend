@@ -1,0 +1,9 @@
+@use "../contact-overlay-variables" as variables;
+
+.submit-button-text {
+  color: variables.$gray;
+}
+
+a {
+  text-decoration: underline;
+}

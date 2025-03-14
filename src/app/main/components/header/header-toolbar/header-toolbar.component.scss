@@ -1,7 +1,21 @@
 @use "./toolbar-variables" as variables;
 
+// Menu
 $background-color: #ffffff4d;
-$space-between-buttons-and-menu: 15px;
+$space-between-buttons-and-menu: 7px;
+$navMenuSidePadding: 12px;
+$menuMaxHeight: 40svh;
+// References
+$referencesFontSize: clamp(1rem, calc(1vw + 1rem), 2rem);
+$referenceHoverColor: #9c9c9c;
+// Divider
+$dividerColor: #3b3b3b;
+$dividerHeight: 1px;
+$gapAroundDivider: 5px 0;
+// Socials
+$socialLinkSize: 32px;
+$socialBorderWidth: 1px;
+$socialBorderColor: #000;
 
 .header-toolbar {
   background-color: $background-color;
@@ -10,26 +24,75 @@ $space-between-buttons-and-menu: 15px;
     max-height: 0;
     overflow: hidden;
     transition: all variables.$animations-duration ease-in-out;
-    display: flex;
-    flex-direction: column;
 
-    a {
+    nav > ul,
+    mat-divider,
+    .socials {
       opacity: 0;
       transition: opacity variables.$animations-duration ease-in-out;
     }
-    &.open {
-      max-height: 60svh;
-      margin-top: $space-between-buttons-and-menu;
+    nav > ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      padding-left: $navMenuSidePadding;
+      padding-right: $navMenuSidePadding;
+      font-size: $referencesFontSize;
+
+      li {
+        transition: color 300ms;
+
+        &:hover {
+          color: $referenceHoverColor;
+        }
+      }
+    }
+    mat-divider {
+      border-top-color: $dividerColor;
+      border-top-width: $dividerHeight;
+      margin: $gapAroundDivider;
+    }
+    .socials {
+      display: flex;
+      justify-content: center;
+      padding-top: 5px;
+      width: 100%;
 
       a {
+        width: $socialLinkSize;
+        height: $socialLinkSize;
+        border: $socialBorderWidth solid $socialBorderColor;
+        border-radius: 50%;
+        overflow: hidden;
+        transition: background-color 300ms;
+
+        &:hover {
+          background-color: #ffffff4b;
+        }
+        img {
+          padding: 7px;
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+    &.open {
+      max-height: $menuMaxHeight;
+      margin-top: $space-between-buttons-and-menu;
+
+      nav > ul,
+      mat-divider,
+      .socials {
         opacity: 1;
       }
     }
   }
 }
 
-@media (max-width: variables.$breakpoint) {
+@media (max-width: variables.$mobile-breakpoint) {
   .header-toolbar {
     padding: 10px !important;
+  }
+  .buttons {
+    gap: 0.7rem !important;
   }
 }

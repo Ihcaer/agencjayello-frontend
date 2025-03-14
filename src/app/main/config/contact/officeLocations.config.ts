@@ -1,4 +1,4 @@
-interface OfficeLocation {
+export interface OfficeLocation {
    city: string;
    address: string;
    zipCode: string;

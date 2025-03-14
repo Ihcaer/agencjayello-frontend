@@ -1,0 +1,64 @@
+<div class="d-flex flex-column gap-3">
+  <h3>Formularz</h3>
+  <form
+    (ngSubmit)="submitForm()"
+    [formGroup]="contactForm"
+    class="d-flex flex-column gap-3"
+  >
+    <div class="form-fields d-flex flex-column">
+      <mat-form-field>
+        <mat-label>Imię</mat-label>
+        <input
+          type="text"
+          formControlName="name"
+          matInput
+          autocomplete="given-name"
+        />
+        @if(contactForm.get('name')?.hasError('required')){
+        <mat-error>{{ emptyErrorMessage() }}</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          formControlName="email"
+          matInput
+          autocomplete="email"
+          spellcheck="false"
+        />
+        @if(contactForm.get('email')?.hasError('required')){
+        <mat-error>{{ emptyErrorMessage() }}</mat-error>
+        } @else if (contactForm.get('email')?.hasError('email') ) {
+        <mat-error>{{ notEmailErrorMessage() }}</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Wiadomość</mat-label>
+        <textarea formControlName="message" matInput rows="3"></textarea>
+        @if(contactForm.get('message')?.hasError('required')){
+        <mat-error>{{ emptyErrorMessage() }}</mat-error>
+        }
+      </mat-form-field>
+      <div class="consent-checkbox d-flex flex-column">
+        <mat-checkbox formControlName="consent">
+          Wyrażam zgodę na przetwarzanie moich danych osobowych w celach
+          opisanych w
+          <a [routerLink]="privacyPolicy.ref" class="text-primary">
+            polityce prywatności</a
+          >.
+        </mat-checkbox>
+        @if (contactForm.get('consent')?.invalid &&
+        contactForm.get('consent')?.touched){
+        <span class="text-danger mx-3">
+          Aby wysłać formularz musisz zaakceptować zgodę na przetwarzanie danych
+          osobowych.
+        </span>
+        }
+      </div>
+    </div>
+    <button type="submit" mat-flat-button>
+      <span class="submit-button-text">Wyślij</span>
+    </button>
+  </form>
+</div>
