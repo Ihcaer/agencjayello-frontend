@@ -1,0 +1,8 @@
+$mainYellow: var(--main-yellow);
+$headerColor: #b7b7b7;
+$primaryColor: #fff;
+
+a,
+.reference {
+  text-decoration: underline $mainYellow;
+}
