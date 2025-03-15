@@ -1,0 +1,21 @@
+<div class="footer-block">
+  <h3 class="footer-headline">Kontakt</h3>
+  <ul class="footer-options">
+    <li>
+      <button class="reference border-0 p-0" (click)="openContactForm()">
+        Formularz
+      </button>
+    </li>
+    <li>
+      <a
+        [href]="'tel:' + contactData().phoneNumber"
+        class="text-decoration-none"
+        >{{ contactData().phoneNumber }}</a
+      >
+    </li>
+    <li>
+      <a [href]="'mailto:' + contactData().email">{{ contactData().email }}</a>
+    </li>
+    <li>NIP: {{ contactData().nip }}</li>
+  </ul>
+</div>
