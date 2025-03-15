@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LogoYelloComponent } from "../logo-yello/logo-yello.component";
+import { LogoYelloComponent } from "../../../shared/components/logo-yello/logo-yello.component";
 import { HeaderToolbarComponent } from "./header-toolbar/header-toolbar.component";
 
 @Component({
