@@ -24,10 +24,10 @@
       </ul>
     </nav>
     <mat-divider />
-    <div class="socials f-flex justify-content-evenly">
+    <div class="socials d-flex justify-content-evenly">
       @for(social of socialMedia(); track social){
       <a
-        [href]="social.link"
+        [href]="sanitizeUrl(social.link)"
         target="_blank"
         class="d-flex justify-content-center align-items-center"
       >
