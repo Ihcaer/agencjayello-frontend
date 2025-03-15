@@ -3,9 +3,16 @@
 footer {
   background-color: #1c1c1c;
   color: #fff;
+  gap: 5vw;
 
   .upper-side {
-    gap: 15px;
+    gap: 10%;
+    flex: 1;
+
+    .menu {
+      width: 100%;
+      gap: 0 15px;
+    }
   }
   mat-divider {
     border-top-color: commons.$primaryColor;
