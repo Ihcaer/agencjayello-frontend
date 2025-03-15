@@ -1,0 +1,5 @@
+<div class="legals-container d-flex flex-column gap-1">
+  @for (legal of legals() | keyvalue; track legal){
+  <a [routerLink]="legal.value.ref">{{ legal.value.name }}</a>
+  }
+</div>

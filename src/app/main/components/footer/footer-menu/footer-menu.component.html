@@ -1,0 +1,13 @@
+<div class="footer-block">
+  <h3 class="footer-headline">Menu</h3>
+  <ul>
+    <li class="reference footer-options">
+      <a routerLink="/">Strona główna</a>
+    </li>
+    @for (reference of references(); track reference){
+    <li class="reference footer-options">
+      <a [routerLink]="reference.path">{{ reference.name }}</a>
+    </li>
+    }
+  </ul>
+</div>

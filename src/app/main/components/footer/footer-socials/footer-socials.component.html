@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center gap-2 flex-wrap">
+  @for(social of socials(); track social){
+  <a
+    [href]="sanitizeUrl(social.link)"
+    target="_blank"
+    class="d-flex justify-content-center align-items-center"
+  >
+    <img
+      [ngSrc]="social.iconPath + social.brightIcon"
+      [alt]="social.name"
+      [width]="social.width"
+      [height]="social.height"
+    />
+  </a>
+  }
+</div>

@@ -1,0 +1,37 @@
+@use "../footer-commons" as commons;
+
+$borders: 1px solid commons.$primaryColor;
+$imagesPaddingTopBot: 5%;
+$imagesPaddingSides: 20px;
+$dividerTextSize: clamp(0.5rem, calc(0.25vw + 1rem), 1.5rem);
+$dividerGap: 5%;
+
+.logos-container {
+  border: $borders;
+  padding: calc($imagesPaddingTopBot / 2) 0;
+
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $imagesPaddingTopBot $imagesPaddingSides;
+
+    img {
+      width: auto;
+      height: 100%;
+      max-height: min(90px, 10vw); // 90px is from image height
+    }
+  }
+  .divider {
+    span {
+      margin: 0 $dividerGap;
+      font-size: $dividerTextSize;
+    }
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      border-bottom: $borders;
+    }
+  }
+}

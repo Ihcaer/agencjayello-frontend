@@ -1,0 +1,14 @@
+<div class="footer-block">
+  <h3 class="footer-headline">Nasze biura</h3>
+  <ul>
+    @for (office of offices(); track office){
+    <li class="footer-options">
+      <h4>{{ office.city }}</h4>
+      <ul class="address">
+        <li>{{ office.address }}</li>
+        <li>{{ office.zipCode }}</li>
+      </ul>
+    </li>
+    }
+  </ul>
+</div>
