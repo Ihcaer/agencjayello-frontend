@@ -14,6 +14,7 @@ export class FooterLogosComponent {
 
   private safeUrl!: SafeUrl;
   protected opublikowaniUrl: string = "https://opublikowani.pl";
+  protected dimaqUrl: string = "https://dimaq.pl";
 
   getSafeUrl(url: string): SafeUrl {
     this.safeUrl = this.sanitizer.sanitizeUrl(url);

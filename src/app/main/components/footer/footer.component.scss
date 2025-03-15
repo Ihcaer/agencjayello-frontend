@@ -1,8 +1,19 @@
+@use "./footer-commons" as commons;
+
 footer {
   background-color: #1c1c1c;
   color: #fff;
 
   .upper-side {
     gap: 15px;
+  }
+  mat-divider {
+    border-top-color: commons.$primaryColor;
+  }
+}
+
+@media (max-width: commons.$mobileBreakpoint) {
+  .bottom-side {
+    justify-content: center !important;
   }
 }

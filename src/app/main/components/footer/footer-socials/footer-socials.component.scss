@@ -1,0 +1,23 @@
+@use "../footer-commons" as commons;
+
+$refSize: 35px;
+$borderWidth: 1px;
+$imagePadding: 7px;
+$hoverBgColor: commons.$mainYellow;
+
+a {
+  width: $refSize;
+  height: $refSize;
+  border: $borderWidth solid commons.$primaryColor;
+  border-radius: 50%;
+  transition: background-color 300ms;
+
+  &:hover {
+    background-color: $hoverBgColor;
+  }
+  img {
+    width: auto;
+    height: 100%;
+    padding: $imagePadding;
+  }
+}

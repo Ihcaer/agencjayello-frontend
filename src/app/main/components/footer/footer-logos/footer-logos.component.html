@@ -13,14 +13,16 @@
   <div class="divider d-flex align-items-center">
     <span>należymy do</span>
   </div>
-  <picture class="logos">
-    <source srcset="footer/dimaq.avif" type="image/avif" />
-    <img
-      ngSrc="footer/dimaq.png"
-      alt="Logo DIMAQ"
-      width="246"
-      height="90"
-      priority
-    />
-  </picture>
+  <a [href]="getSafeUrl(dimaqUrl)">
+    <picture class="logos">
+      <source srcset="footer/dimaq.avif" type="image/avif" />
+      <img
+        ngSrc="footer/dimaq.png"
+        alt="Logo DIMAQ"
+        width="246"
+        height="90"
+        priority
+      />
+    </picture>
+  </a>
 </div>

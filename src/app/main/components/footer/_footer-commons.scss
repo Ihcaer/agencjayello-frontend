@@ -6,6 +6,7 @@ $headerFontSize: clamp(1.5rem, calc(0.5vw + 1rem), 2rem);
 $listFontColor: #e5e5e5;
 $listOptionsFontSize: clamp(1rem, calc(0.5vw + 0.75rem), 1.25rem);
 $hoverColor: $mainYellow;
+$mobileBreakpoint: 29rem;
 
 ul {
   list-style-type: none;
