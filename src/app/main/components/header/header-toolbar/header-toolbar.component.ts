@@ -19,11 +19,11 @@ import { SafeUrl } from '@angular/platform-browser';
 export class HeaderToolbarComponent {
   private sanitizer = inject(SanitizationService);
 
-  protected isMenuOpen = signal(false);
+  isMenuOpen = signal(false);
   protected readonly references = signal(referencesConfig);
   protected readonly socialMedia = signal(socialMediaConfig);
 
-  protected toggleMenu(isOpen: boolean): void {
+  toggleMenu(isOpen: boolean): void {
     this.isMenuOpen.set(isOpen);
   }
 

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterMenuComponent } from './footer-menu.component';
+import { provideRouter } from '@angular/router';
 
 describe('FooterMenuComponent', () => {
   let component: FooterMenuComponent;
@@ -8,9 +9,10 @@ describe('FooterMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FooterMenuComponent]
+      imports: [FooterMenuComponent],
+      providers: [provideRouter([])]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(FooterMenuComponent);
     component = fixture.componentInstance;
