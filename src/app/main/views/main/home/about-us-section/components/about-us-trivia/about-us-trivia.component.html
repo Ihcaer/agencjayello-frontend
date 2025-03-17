@@ -1,0 +1,30 @@
+<div
+  class="trivia border-start border-4 border-primary ps-2 py-2 d-flex flex-column gap-2"
+>
+  <div class="trivia__header d-flex justify-content-between align-items-center">
+    <img
+      ngSrc="common/icons/psychology_alt.svg"
+      alt="Ikona ciekawostek"
+      width="24"
+      height="24"
+      class="img-fluid"
+    />
+    <span class="trivia__header__counter">
+      {{ currentIndex() + 1 }}/{{ triviaLength() }}
+    </span>
+  </div>
+  <span
+    class="trivia__content change-animation"
+    [class.changing-trivia]="isTriviaChanging()"
+  >
+    {{ currentTrivia() }}
+  </span>
+  <div class="d-flex gap-1">
+    <button (click)="previousTrivia()">
+      <span class="material-symbols-outlined left-icon">chevron_left</span>
+    </button>
+    <button (click)="nextTrivia()">
+      <span class="material-symbols-outlined right-icon">chevron_right</span>
+    </button>
+  </div>
+</div>

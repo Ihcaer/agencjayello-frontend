@@ -1,0 +1,56 @@
+// Header
+$triviaIconWidth: clamp(1.75rem, 10%, 2.5rem);
+// Content
+$text-size: clamp(0.75rem, calc(0.5vw + 0.5rem), 1.25rem);
+$contentHeight: 5rem;
+// Buttons
+$buttonsBackground: transparent;
+$buttonsHoverBackground: var(--main-yellow);
+$buttonsSize: clamp(1.25rem, 10%, 2.25rem);
+$buttonsColor: #000;
+$buttonsIconSize: clamp(1rem, calc(0.5vw + 1rem), 1.5rem);
+$buttonsIconPadding: 2px;
+
+.trivia {
+  &__header {
+    img {
+      width: $triviaIconWidth;
+      height: auto;
+    }
+    &__counter {
+      font-size: $text-size;
+    }
+  }
+  &__content {
+    font-size: $text-size;
+    min-height: $contentHeight;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $buttonsColor;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    background-color: $buttonsBackground;
+    color: $buttonsColor;
+    width: $buttonsSize;
+    height: $buttonsSize;
+    transition: background-color 300ms;
+
+    &:hover {
+      background-color: $buttonsHoverBackground;
+    }
+    span {
+      font-size: $buttonsIconSize;
+    }
+    // Padding to center icons
+    .left-icon {
+      padding-right: $buttonsIconPadding;
+    }
+    .right-icon {
+      padding-left: $buttonsIconPadding;
+    }
+  }
+}
