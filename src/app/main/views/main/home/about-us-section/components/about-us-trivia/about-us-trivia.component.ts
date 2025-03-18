@@ -1,5 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { triviaConfig } from '@main/config/trivia.config';
 
 @Component({
   selector: 'app-about-us-trivia',
@@ -17,12 +18,7 @@ import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/c
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutUsTriviaComponent {
-  private trivia: string[] = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vestibulum dapibus, nulla nec ultrices consequat, leo.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu tortor pulvinar.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas et quam quis vehicula."
-  ];
+  private trivia: string[] = triviaConfig;
   private animationTiming: number = 500;
 
   protected triviaLength = signal<number>(this.trivia.length);
